@@ -9,6 +9,7 @@ Source0:	http://users.pandora.be/stes/objc-bootstrap-%{version}.tar.gz
 # Source0-md5:	62fe18ed5caf288c4e73b115e81e6367
 Source1:	http://users.pandora.be/stes/%{name}-%{version}.tar.gz
 # Source1-md5:	ee713974b44d6bf8894b4ce8e8db914e
+Patch0:		%{name}-lib64.patch
 URL:		http://users.pandora.be/stes/compiler.html
 BuildRequires:	automake
 BuildRequires:	byacc
@@ -26,6 +27,12 @@ Obiektowego C oraz prekompilator (translator), który generuje kod
 
 %prep
 %setup -q -c -a1
+
+%if "%{_lib}" == "lib64"
+%patch0 -p1
+mv -f %{name}-%{version}/{lib,lib64}
+ln -sf lib64 %{name}-%{version}/lib
+%endif
 
 %build
 cd %{name}-bootstrap-%{version}
@@ -45,10 +52,9 @@ PATH=$RPM_BUILD_DIR/%{name}-%{version}/bin:$PATH; export PATH
 
 %install
 rm -rf $RPM_BUILD_ROOT
-cd %{name}-%{version}
-install -d $RPM_BUILD_ROOT{%{_prefix},%{_datadir}}
+install -d $RPM_BUILD_ROOT{%{_prefix}/lib,%{_libdir},%{_datadir}}
 
-%{__make} install \
+%{__make} install -C %{name}-%{version} \
 	INSTALLDIR=$RPM_BUILD_ROOT%{_prefix}
 
 mv	$RPM_BUILD_ROOT%{_prefix}/ma* \
@@ -56,6 +62,10 @@ mv	$RPM_BUILD_ROOT%{_prefix}/ma* \
 
 mv	$RPM_BUILD_ROOT%{_mandir}/man3/Object.3 \
 	$RPM_BUILD_ROOT%{_mandir}/man3/ObjectO.3
+
+%if "%{_lib}" != "lib"
+mv -f $RPM_BUILD_ROOT{%{_libdir}/*.txt,%{_prefix}/lib}
+%endif
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -65,5 +75,8 @@ rm -rf $RPM_BUILD_ROOT
 %doc %{name}-%{version}/{Books.txt,Changes.txt,Readme.txt,*.html}
 %attr(755,root,root) %{_bindir}/*
 %{_includedir}/*
-%{_libdir}/*
+%{_libdir}/*.a
+%{_libdir}/*.o
+%{_libdir}/*.ld
+%{_prefix}/lib/*.txt
 %{_mandir}/man?/*
