@@ -5,13 +5,14 @@ Version:	3.1.32
 Release:	1
 License:	LGPL
 Group:		Development/Tools
-URL:		http://users.pandora.be/stes/compiler.html
 Source0:	http://users.pandora.be/stes/objc-bootstrap-%{version}.tar.gz
 # Source0-md5:	62fe18ed5caf288c4e73b115e81e6367
 Source1:	http://users.pandora.be/stes/%{name}-%{version}.tar.gz
 # Source1-md5:	ee713974b44d6bf8894b4ce8e8db914e
-BuildRequires:	flex
+URL:		http://users.pandora.be/stes/compiler.html
+BuildRequires:	automake
 BuildRequires:	byacc
+BuildRequires:	flex
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -28,6 +29,7 @@ Obiektowego C oraz prekompilator (translator), który generuje kod
 
 %build
 cd %{name}-bootstrap-%{version}
+cp -f /usr/share/automake/config.* .
 %configure2_13 \
 	--prefix=$RPM_BUILD_DIR/%{name}-%{version}\
 	--with-cplus
