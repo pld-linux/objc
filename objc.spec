@@ -38,7 +38,7 @@ cd %{name}-%{version}-bootstrap
 
 cd ../%{name}-%{version}
 PATH=$RPM_BUILD_DIR/%{name}-%{version}/bin:$PATH; export PATH
-%configure \
+%configure2_13 \
 	--with-cplus
 %{__make}
 
