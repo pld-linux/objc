@@ -30,7 +30,7 @@ Objektowego-C oraz prekompiler (translator), który generuje kod
 
 %build
 cd %{name}-%{version}-bootstrap
-%configure\
+%configure2_13 \
 	--prefix=$RPM_BUILD_DIR/%{name}-%{version}\
 	--with-cplus
 %{__make}
