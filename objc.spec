@@ -1,5 +1,5 @@
 Summary:	Portable Object Compiler
-Summary(pl):	Przenaszalny Kompilator Obiektowego C
+Summary(pl):	Przeno¶ny kompilator obiektowego C
 Name:		objc
 Version:	3.2.5
 Release:	0.9
@@ -22,9 +22,9 @@ The Portable Object Compiler consists of a set of Objective-C class
 libraries and a precompiler (translator) that generates plain C.
 
 %description -l pl
-Przenaszalny Kompilator Obiektowego C zawiera zbiór bibliotek
-Obiektowego C oraz prekompilator (translator), który generuje kod
-¼ród³owy w czystym C.
+Przeno¶ny kompilator obiektowego C zawiera zbiór bibliotek obiektowego
+C oraz prekompilator (translator), który generuje kod ¼ród³owy w
+czystym C.
 
 %prep
 %setup -q
