@@ -20,7 +20,7 @@ libraries and a precompiler (translator) that generates plain C.
 
 %description -l pl
 Przenaszalny Kompilator Obiektowego C zawiera zbiór bibliotek
-Objektowego-C oraz prekompilator (translator), który generuje kod
+Obiektowego C oraz prekompilator (translator), który generuje kod
 ¼ród³owy w czystym C.
 
 %prep
