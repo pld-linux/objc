@@ -5,9 +5,6 @@ Version:	3.1.27
 Release:	1
 License:	LGPL
 Group:		Development/Tools
-Group(de):	Entwicklung/Werkzeuge
-Group(fr):	Development/Outils
-Group(pl):	Programowanie/Narzêdzia
 URL:		http://users.pandora.be/stes/compiler.html
 Source0:	http://users.pandora.be/stes/%{name}-%{version}-bootstrap.tar.gz
 Source1:	http://users.pandora.be/stes/%{name}-%{version}.tar.gz
