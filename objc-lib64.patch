@@ -1,0 +1,40 @@
+--- objc-3.1.32/src/objc/objc.in.orig	Tue Feb 13 18:31:37 2001
++++ objc-3.1.32/src/objc/objc.in	Tue Mar 30 11:09:37 2004
+@@ -214,7 +214,7 @@
+ 		     ;;
+     -boehm)    objcrt=objcrtgc;
+                      cpargs="$cpargs -I$gcprefix/include";
+-		     finlibs="$finlibs $gcprefix/lib/gc.a";
++		     finlibs="$finlibs $gcprefix/lib64/gc.a";
+ 		     ;;
+     -gc|-refcnt)	     cpargs="$cpargs -DOBJC_REFCNT=1";
+                      ocargs="$ocargs $arg";
+@@ -336,7 +336,7 @@
+ #
+ 
+ bindir="$objcdir/bin"
+-libdir="$objcdir/lib"
++libdir="$objcdir/lib64"
+ hdrdir="$objcdir/include"
+ objc1=$bindir/objc1
+ objcplus1=$bindir/objc1
+@@ -669,7 +669,7 @@
+ 
+ if [ $link = y -a $linkdl = y ]; then
+ 
+-    if [ ! -f $dlfile ]; then dlfile="$objcdir/lib/$dlfile"; fi;
++    if [ ! -f $dlfile ]; then dlfile="$objcdir/lib64/$dlfile"; fi;
+     if [ ! -f $dlfile ]; then echo "objc: Can't find" $dlfile; exit 1; fi
+ 
+     junk="_postlnk.o"
+--- objc-3.1.32/Makefile.in.orig	Sun Oct 29 22:20:20 2000
++++ objc-3.1.32/Makefile.in	Tue Mar 30 11:11:48 2004
+@@ -79,7 +79,7 @@
+ 
+ install : bootstrap
+ 	test -d $(INSTALLDIR) || $(MKDIR) $(INSTALLDIR)
+-	$(TAR) cf - $(TARARGS) bin lib man include | ( $(CD) ${INSTALLDIR}; $(TAR) xvf - $(TARARGS))
++	$(TAR) cf - $(TARARGS) bin lib64 man include | ( $(CD) ${INSTALLDIR}; $(TAR) xvf - $(TARARGS))
+ 
+ cleantmp :
+ 	-$(CD) src; $(CD) objcrt; $(MAKE) cleantmp
