@@ -1,15 +1,15 @@
 Summary:	Portable Object Compiler
 Summary(pl):	Przenaszalny Kompilator Obiektowego C
 Name:		objc
-Version:	3.1.27
+Version:	3.1.32
 Release:	1
 License:	LGPL
 Group:		Development/Tools
 URL:		http://users.pandora.be/stes/compiler.html
-Source0:	http://users.pandora.be/stes/%{name}-%{version}-bootstrap.tar.gz
-# Source0-md5:	f47fe2dbe94aa51f37db5d54711cb0e2
+Source0:	http://users.pandora.be/stes/objc-bootstrap-%{version}.tar.gz
+# Source0-md5:	62fe18ed5caf288c4e73b115e81e6367
 Source1:	http://users.pandora.be/stes/%{name}-%{version}.tar.gz
-# Source1-md5:	5c978f1ab222c5d35b55425f0cc45fc9
+# Source1-md5:	ee713974b44d6bf8894b4ce8e8db914e
 BuildRequires:	flex
 BuildRequires:	byacc
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -27,7 +27,7 @@ Objektowego-C oraz prekompilator (translator), który generuje kod
 %setup -q -c -a1
 
 %build
-cd %{name}-%{version}-bootstrap
+cd %{name}-bootstrap-%{version}
 %configure2_13 \
 	--prefix=$RPM_BUILD_DIR/%{name}-%{version}\
 	--with-cplus
