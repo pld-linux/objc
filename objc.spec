@@ -28,7 +28,6 @@ Obiektowego C oraz prekompilator (translator), który generuje kod
 %setup -q -c -a1
 
 %build
-cp -f /usr/share/automake/config.* util
 cd %{name}-bootstrap-%{version}
 cp -f /usr/share/automake/config.* util
 %configure2_13 \
@@ -38,6 +37,7 @@ cp -f /usr/share/automake/config.* util
 %{__make} install
 
 cd ../%{name}-%{version}
+cp -f /usr/share/automake/config.* util
 PATH=$RPM_BUILD_DIR/%{name}-%{version}/bin:$PATH; export PATH
 %configure2_13 \
 	--with-cplus
