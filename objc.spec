@@ -68,8 +68,8 @@ rm -rf $RPM_BUILD_ROOT
 %doc Books.txt Changes.txt Readme.txt *.html
 %attr(755,root,root) %{_bindir}/*
 %{_includedir}/*
-%{_libdir}/*.a
-%{_libdir}/*.o
-%{_libdir}/*.ld
-%{_prefix}/lib/*.txt
+#%{_libdir}/*.a
+#%{_libdir}/*.o
+#%{_libdir}/*.ld
+#%{_prefix}/lib/*.txt
 %{_mandir}/man?/*
