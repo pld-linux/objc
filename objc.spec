@@ -54,9 +54,9 @@ mv	$RPM_BUILD_ROOT%{_prefix}/ma* \
 mv	$RPM_BUILD_ROOT%{_mandir}/man3/Object.3 \
 	$RPM_BUILD_ROOT%{_mandir}/man3/ObjectO.3
 
-%if "%{_lib}" != "lib"
-mv -f $RPM_BUILD_ROOT{%{_libdir}/*.txt,%{_prefix}/lib}
-%endif
+#%if "%{_lib}" != "lib"
+#mv -f $RPM_BUILD_ROOT{%{_libdir}/*.txt,%{_prefix}/lib}
+#%endif
 
 find $RPM_BUILD_ROOT -type -d -name CVS |xargs rm -rf
 
