@@ -1,7 +1,7 @@
 Summary:	Portable Object Compiler
 Summary(pl):	Przenaszalny Kompilator Obiektowego C
 Name:		objc
-Version:	3.1.24
+Version:	3.1.27
 Release:	1
 License:	LGPL
 Group:		Development/Tools
