@@ -29,7 +29,7 @@ Obiektowego C oraz prekompilator (translator), który generuje kod
 %setup -q -c -a1
 
 %if "%{_lib}" == "lib64"
-%patch0 -p1
+%patch0 -p0
 mv -f %{name}-%{version}/{lib,lib64}
 ln -sf lib64 %{name}-%{version}/lib
 %endif
