@@ -52,14 +52,12 @@ mv	$RPM_BUILD_ROOT%{_prefix}/ma* \
 mv	$RPM_BUILD_ROOT%{_mandir}/man3/Object.3 \
 	$RPM_BUILD_ROOT%{_mandir}/man3/ObjectO.3
 
-gzip -9nf Books.txt Changes.txt Readme.txt *.html
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc %{name}-%{version}/{html,*.gz}
+%doc %{name}-%{version}/{Books.txt,Changes.txt,Readme.txt,*.html}
 %attr(755,root,root) %{_bindir}/*
 %{_includedir}/*
 %{_libdir}/*
