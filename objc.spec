@@ -9,6 +9,7 @@ Source0:	http://users.pandora.be/stes/%{name}-%{version}.tar.gz
 # Source0-md5:	f75bbdf6ab6e1267e6e2f55609094341
 Patch0:		%{name}-lib64.patch
 URL:		http://users.pandora.be/stes/compiler.html
+BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	byacc
 BuildRequires:	flex
