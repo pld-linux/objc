@@ -2,7 +2,7 @@ Summary:	Portable Object Compiler
 Summary(pl):	Przeno¶ny kompilator obiektowego C
 Name:		objc
 Version:	3.2.5
-Release:	0.9
+Release:	1
 License:	LGPL
 Group:		Development/Tools
 Source0:	http://users.pandora.be/stes/%{name}-%{version}.tar.gz
@@ -12,7 +12,7 @@ URL:		http://users.pandora.be/stes/compiler.html
 BuildRequires:	automake
 BuildRequires:	byacc
 BuildRequires:	flex
-#BuildRequires:	objc-bootstrap
+BuildRequires:	objc-bootstrap
 Provides:	objc-bootstrap = %{version}-%{release}
 Obsoletes:	objc-bootstrap
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
