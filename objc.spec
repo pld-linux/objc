@@ -7,7 +7,9 @@ License:	LGPL
 Group:		Development/Tools
 URL:		http://users.pandora.be/stes/compiler.html
 Source0:	http://users.pandora.be/stes/%{name}-%{version}-bootstrap.tar.gz
+# Source0-md5:	f47fe2dbe94aa51f37db5d54711cb0e2
 Source1:	http://users.pandora.be/stes/%{name}-%{version}.tar.gz
+# Source1-md5:	5c978f1ab222c5d35b55425f0cc45fc9
 BuildRequires:	flex
 BuildRequires:	byacc
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
