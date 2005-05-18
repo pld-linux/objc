@@ -1,12 +1,12 @@
 Summary:	Portable Object Compiler
 Summary(pl):	Przeno¶ny kompilator obiektowego C
 Name:		objc
-Version:	3.2.5
-Release:	2
+Version:	3.2.7
+Release:	1
 License:	LGPL
 Group:		Development/Tools
 Source0:	http://users.pandora.be/stes/%{name}-%{version}.tar.gz
-# Source0-md5:	f75bbdf6ab6e1267e6e2f55609094341
+# Source0-md5:	0d63663bfd8c2d6fadf855fb6e78570f
 Patch0:		%{name}-lib64.patch
 URL:		http://users.pandora.be/stes/compiler.html
 BuildRequires:	autoconf
