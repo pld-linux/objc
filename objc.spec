@@ -1,5 +1,5 @@
 Summary:	Portable Object Compiler
-Summary(pl.UTF-8):   Przenośny kompilator obiektowego C
+Summary(pl.UTF-8):	Przenośny kompilator obiektowego C
 Name:		objc
 Version:	3.2.7
 Release:	1
